@@ -1,8 +1,8 @@
-# doctorq_clone
+# Tide Track App
 
-A new Flutter project.
+This app allows you to consult your desired doctors around the globe and conduct sessions with them from anywhere around the world.
 
-## Getting Started
+## Features
 
 This project is a starting point for a Flutter application.
 
