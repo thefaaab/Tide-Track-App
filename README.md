@@ -4,13 +4,8 @@ This app allows you to consult your desired doctors around the globe and conduct
 
 ## Features
 
-This project is a starting point for a Flutter application.
+- Allows to connect doctors around the world.
+- Conduct sessions according to your comfortability.
+- Meet with top doctors.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##Screenshots.
