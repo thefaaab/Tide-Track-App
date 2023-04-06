@@ -37,82 +37,84 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          PageView(
-            onPageChanged: (value) => setState(() {
-              _currentIndex = value;
-            }),
-            controller: _controller,
-            children: [
-              Image.asset(
-                'assets/doc3.jpg',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/doc2.jpg',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/doc1.jpg',
-                fit: BoxFit.cover,
-              ),
-            ],
-          ),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              decoration: const BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                      color: Color(0x63000000),
-                      offset: Offset(0, -10),
-                      blurRadius: 100),
-                ],
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            PageView(
+              onPageChanged: (value) => setState(() {
+                _currentIndex = value;
+              }),
+              controller: _controller,
+              children: [
+                Image.asset(
+                  'assets/doc3.jpg',
+                  fit: BoxFit.cover,
+                ),
+                Image.asset(
+                  'assets/doc2.jpg',
+                  fit: BoxFit.cover,
+                ),
+                Image.asset(
+                  'assets/doc1.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ],
+            ),
+            Positioned(
+              bottom: 0,
+              child: Container(
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color(0x63000000),
+                        offset: Offset(0, -10),
+                        blurRadius: 100),
+                  ],
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+                height: MediaQuery.of(context).size.height * 0.45,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 35.0),
+                      child: Text(
+                        content[_currentIndex]['title']!,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: Color(0xFF194FE3),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 35.0, left: 25, right: 25),
+                      child: Text(
+                        content[_currentIndex]['description']!,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.black87,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    buildIndicator(),
+                    const SizedBox(height: 20),
+                    skipButton(context),
+                    const SizedBox(height: 10),
+                    nextButton(context)
+                  ],
                 ),
               ),
-              height: MediaQuery.of(context).size.height * 0.4,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 35.0),
-                    child: Text(
-                      content[_currentIndex]['title']!,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: Color(0xFF194FE3),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 35.0, left: 25, right: 25),
-                    child: Text(
-                      content[_currentIndex]['description']!,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Colors.black87,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  buildIndicator(),
-                  const SizedBox(height: 20),
-                  skipButton(context),
-                  const SizedBox(height: 10),
-                  nextButton(context)
-                ],
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -20,44 +20,49 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 60.0),
-            child: Center(
-              child: Image.asset(
-                'assets/logo.png',
-                height: 150,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          physics: const ClampingScrollPhysics(),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 60.0),
+                child: Center(
+                  child: Image.asset(
+                    'assets/logo.png',
+                    height: 150,
+                  ),
+                ),
               ),
-            ),
+              const SizedBox(
+                height: 50,
+              ),
+              const Text(
+                'Sign-up for free',
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              buildEmail(),
+              const SizedBox(
+                height: 25,
+              ),
+              buildPassword(),
+              const SizedBox(height: 50),
+              buildSignUp(context),
+              const SizedBox(height: 20),
+              Text(
+                'or continue with',
+                style: TextStyle(color: Colors.grey[700]),
+              ),
+              const SizedBox(height: 25),
+              buildOtherSignUp(),
+              const SizedBox(height: 25),
+              buildNoAcc(context)
+            ],
           ),
-          const SizedBox(
-            height: 50,
-          ),
-          const Text(
-            'Sign-up for free',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          buildEmail(),
-          const SizedBox(
-            height: 25,
-          ),
-          buildPassword(),
-          const SizedBox(height: 50),
-          buildSignUp(context),
-          const SizedBox(height: 20),
-          Text(
-            'or continue with',
-            style: TextStyle(color: Colors.grey[700]),
-          ),
-          const SizedBox(height: 25),
-          buildOtherSignUp(),
-          const SizedBox(height: 25),
-          buildNoAcc(context)
-        ],
+        ),
       ),
     );
   }
@@ -193,7 +198,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
           const SizedBox(
-            height: 15,
+            height: 6,
           ),
           Container(
             decoration: BoxDecoration(
@@ -234,7 +239,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fontSize: 14,
                     fontWeight: FontWeight.w500),
                 border: InputBorder.none,
-                contentPadding: const EdgeInsets.all(20),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 20),
               ),
             ),
           ),
@@ -259,7 +264,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
             const SizedBox(
-              height: 15,
+              height: 6,
             ),
             Container(
               decoration: BoxDecoration(
@@ -287,7 +292,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       fontSize: 14,
                       fontWeight: FontWeight.w500),
                   border: InputBorder.none,
-                  contentPadding: const EdgeInsets.all(20),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 20),
                 ),
               ),
             ),

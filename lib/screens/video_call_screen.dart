@@ -1,3 +1,5 @@
+import 'package:doctorq_clone/extesions/context_extension.dart';
+import 'package:doctorq_clone/screens/call_end_screen.dart';
 import 'package:flutter/material.dart';
 
 class VideoCallScreen extends StatelessWidget {
@@ -6,15 +8,12 @@ class VideoCallScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.cameraswitch_outlined,
-              color: Colors.black54,
-            ),
             const Padding(
               padding: EdgeInsets.only(top: 140.0),
               child: Center(
@@ -76,8 +75,7 @@ class VideoCallScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
-                    // context.navigator(const HomeScreen());
+                    context.navigator(const CallEndScreen());
                   },
                   child: CircleAvatar(
                     maxRadius: 32,

@@ -1,6 +1,5 @@
 import 'package:doctorq_clone/controller/profile_elements_controller.dart';
 import 'package:doctorq_clone/extesions/context_extension.dart';
-import 'package:doctorq_clone/screens/navigation_screen.dart';
 import 'package:doctorq_clone/screens/profile/notifcation_settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,6 +19,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -47,7 +47,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     },
                     child: Container(
                       color: Colors.transparent,
-                      height: 64,
+                      height: 54,
                       width: double.infinity,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

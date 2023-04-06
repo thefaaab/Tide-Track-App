@@ -24,6 +24,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       body: tabs[_currentIndex],

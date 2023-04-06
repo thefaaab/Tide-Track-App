@@ -85,7 +85,7 @@ class _NewProfileState extends State<NewProfile> {
           ),
         ),
         const SizedBox(
-          height: 15,
+          height: 6,
         ),
         Container(
           decoration: BoxDecoration(
@@ -108,7 +108,7 @@ class _NewProfileState extends State<NewProfile> {
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               border: InputBorder.none,
-              contentPadding: const EdgeInsets.all(20),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             ),
           ),
         ),
@@ -129,53 +129,48 @@ class _NewProfileState extends State<NewProfile> {
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 10,
         ),
         Container(
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(99),
           ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 10.0),
-            child: TextField(
-              readOnly: true,
-              onTap: () async {
-                DateTime? pickedDate = await showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(1900),
-                  lastDate: DateTime(2100),
-                );
-                if (pickedDate != null) {
-                  setState(() {
-                    _date.text = DateFormat('dd-MM-yyyy').format(pickedDate);
-                  });
-                }
-              },
-              controller: _date,
-              keyboardType: TextInputType.datetime,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        const BorderSide(width: 2, color: Colors.black12),
-                    borderRadius: BorderRadius.circular(99)),
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        const BorderSide(width: 2, color: Colors.black12),
-                    borderRadius: BorderRadius.circular(99)),
-                suffixIcon: const Padding(
-                  padding: EdgeInsets.only(right: 25),
-                  child: Icon(Icons.calendar_month_outlined),
-                ),
-                hintText: 'Date of Birth',
-                hintStyle: const TextStyle(
-                    color: Colors.black26,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500),
-                border: InputBorder.none,
-                contentPadding: const EdgeInsets.all(20),
+          child: TextField(
+            readOnly: true,
+            onTap: () async {
+              DateTime? pickedDate = await showDatePicker(
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime(1900),
+                lastDate: DateTime(2100),
+              );
+              if (pickedDate != null) {
+                setState(() {
+                  _date.text = DateFormat('dd-MM-yyyy').format(pickedDate);
+                });
+              }
+            },
+            controller: _date,
+            keyboardType: TextInputType.datetime,
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(width: 2, color: Colors.black12),
+                  borderRadius: BorderRadius.circular(99)),
+              enabledBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(width: 2, color: Colors.black12),
+                  borderRadius: BorderRadius.circular(99)),
+              suffixIcon: const Padding(
+                padding: EdgeInsets.only(right: 25),
+                child: Icon(Icons.calendar_month_outlined),
               ),
+              hintText: 'Date of Birth',
+              hintStyle: const TextStyle(
+                  color: Colors.black26,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500),
+              border: InputBorder.none,
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             ),
           ),
         ),
@@ -196,7 +191,7 @@ class _NewProfileState extends State<NewProfile> {
           ),
         ),
         const SizedBox(
-          height: 15,
+          height: 6,
         ),
         Container(
           decoration: BoxDecoration(
@@ -214,7 +209,7 @@ class _NewProfileState extends State<NewProfile> {
               enabledBorder: OutlineInputBorder(
                   borderSide: const BorderSide(width: 2, color: Colors.black12),
                   borderRadius: BorderRadius.circular(99)),
-              contentPadding: const EdgeInsets.all(20),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             ),
             dropdownColor: Colors.white,
             borderRadius: BorderRadius.circular(25),
@@ -263,7 +258,7 @@ class _NewProfileState extends State<NewProfile> {
           ),
         ),
         const SizedBox(
-          height: 15,
+          height: 6,
         ),
         Container(
           decoration: BoxDecoration(
@@ -286,7 +281,7 @@ class _NewProfileState extends State<NewProfile> {
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               border: InputBorder.none,
-              contentPadding: const EdgeInsets.all(20),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             ),
           ),
         ),
@@ -307,7 +302,7 @@ class _NewProfileState extends State<NewProfile> {
           ),
         ),
         const SizedBox(
-          height: 15,
+          height: 6,
         ),
         Container(
           decoration: BoxDecoration(
@@ -332,7 +327,7 @@ class _NewProfileState extends State<NewProfile> {
                   fontSize: 14,
                   fontWeight: FontWeight.w500),
               border: InputBorder.none,
-              contentPadding: const EdgeInsets.all(20),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 20),
             ),
           ),
         ),
@@ -378,7 +373,7 @@ class _NewProfileState extends State<NewProfile> {
   AppBar appBar() {
     return AppBar(
       elevation: 0,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       leading: SvgPicture.asset(
         'assets/logo.svg',
       ),

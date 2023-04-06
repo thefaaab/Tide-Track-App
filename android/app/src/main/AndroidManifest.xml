@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.doctorq_clone">
    <application
-        android:label="doctorq_clone"
+        android:label="Tide Track"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

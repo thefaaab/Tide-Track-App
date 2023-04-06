@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:doctorq_clone/controller/history_tile.controller.dart';
 import 'package:doctorq_clone/widget/history_tile.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +19,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -158,43 +161,48 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
   Row searchFilterTab() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(
-          width: 310,
-          child: TextField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(128),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                fillColor: Colors.grey[200],
-                contentPadding: const EdgeInsets.symmetric(
-                  vertical: 16,
-                  horizontal: 24,
-                ),
-                hintText: 'Search',
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Padding(
-                    padding: EdgeInsets.only(right: 10.0),
-                    child: Icon(Icons.search, size: 32),
+        Expanded(
+          flex: 10,
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(128),
+                    borderSide: BorderSide.none,
                   ),
-                )),
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                  ),
+                  hintText: 'Search',
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: const Padding(
+                      padding: EdgeInsets.only(right: 10.0),
+                      child: Icon(Icons.search, size: 26),
+                    ),
+                  )),
+            ),
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.filter_alt_rounded,
-            size: 38,
-          ),
-          style: IconButton.styleFrom(
-            foregroundColor: const Color(0xFF194FE3),
-            backgroundColor: Colors.grey[200],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+        const SizedBox(width: 6),
+        Expanded(
+          flex: 2,
+          child: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.filter_alt_rounded,
+              size: 32,
+            ),
+            style: IconButton.styleFrom(
+              foregroundColor: const Color(0xFF194FE3),
+              backgroundColor: Colors.grey[200],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
             ),
           ),
         )

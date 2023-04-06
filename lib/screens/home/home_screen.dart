@@ -16,11 +16,8 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
           CustomAppbar(),
-          SizedBox(height: 20),
           SearchInput(),
-          SizedBox(height: 10),
           SpecialistDoctors(),
-          SizedBox(height: 20),
           TopDoctors(),
         ],
       ),
@@ -124,8 +121,8 @@ class TopDoctors extends StatelessWidget {
               children: List<Widget>.generate(
                 4,
                 (index) => Container(
-                  height: 256,
-                  width: 200,
+                  height: 200,
+                  width: 150,
                   clipBehavior: Clip.antiAlias,
                   margin: const EdgeInsets.only(right: 32),
                   decoration: BoxDecoration(
@@ -236,9 +233,7 @@ class SpecialistDoctors extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                      const Spacer(),
                       const Text('252 Doctors',
                           style: TextStyle(color: Colors.white))
                     ],
@@ -278,9 +273,7 @@ class SpecialistDoctors extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                      const Spacer(),
                       const Text('186 Doctors',
                           style: TextStyle(color: Colors.white))
                     ],
@@ -320,9 +313,7 @@ class SpecialistDoctors extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 50,
-                      ),
+                      const Spacer(),
                       const Text('202 Doctors',
                           style: TextStyle(color: Colors.white))
                     ],
@@ -362,9 +353,7 @@ class SpecialistDoctors extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                      const Spacer(),
                       const Text('206 Doctors',
                           style: TextStyle(color: Colors.white))
                     ],
@@ -395,15 +384,14 @@ class SearchInput extends StatelessWidget {
           filled: true,
           fillColor: Colors.grey[200],
           contentPadding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 24,
+            horizontal: 20,
           ),
           hintText: 'Search',
           suffixIcon: IconButton(
             onPressed: () {},
             icon: const Padding(
               padding: EdgeInsets.only(right: 10.0),
-              child: Icon(Icons.search, size: 32),
+              child: Icon(Icons.search, size: 26),
             ),
           )),
     );

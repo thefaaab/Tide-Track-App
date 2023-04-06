@@ -16,6 +16,7 @@ class _DocBookScreenState extends State<DocBookScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -217,6 +218,7 @@ class _DocBookScreenState extends State<DocBookScreen> {
       ],
       backgroundColor: Colors.transparent,
       elevation: 0,
+      scrolledUnderElevation: 0,
     );
   }
 }

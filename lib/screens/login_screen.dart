@@ -11,35 +11,42 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 200),
-            child: Image.asset(
-              'assets/logo.png',
-              height: 300,
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 120.0, bottom: 50),
-            child: Text(
-              'Welcome to Tide Trak',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-            ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          Column(
-            children: [
-              signupBtn(context),
-              const SizedBox(
-                height: 10,
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Center(
+                child: Image.asset(
+                  'assets/logo.png',
+                  height: 300,
+                ),
               ),
-              signinBtn(context),
-            ],
-          ),
-        ],
+            ),
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 24.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const Text(
+                      'Welcome to Tide Trak',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(height: 96),
+                    signupBtn(context),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    signinBtn(context),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

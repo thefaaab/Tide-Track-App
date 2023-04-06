@@ -12,24 +12,20 @@ class FavouriteTile extends StatelessWidget {
         border: Border.all(color: Colors.black12),
         borderRadius: BorderRadius.circular(15),
       ),
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Stack(
-            children: [
-              Container(
-                width: 80,
-                height: 100,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover, image: AssetImage('assets/dr4.jpg')),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      bottomLeft: Radius.circular(15)),
-                ),
-              ),
-            ],
+          Container(
+            width: 80,
+            height: 100,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.cover, image: AssetImage('assets/dr4.jpg')),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  bottomLeft: Radius.circular(15)),
+            ),
           ),
           const SizedBox(width: 10),
           Padding(

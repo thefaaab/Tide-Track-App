@@ -56,7 +56,7 @@ class DocBookTile extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Text('Cardio Specialist, Ramsay College Hospital',
+                      const Text('Cardio Specialist,\nRamsay College Hospital',
                           style: TextStyle(fontSize: 10))
                     ],
                   ),
